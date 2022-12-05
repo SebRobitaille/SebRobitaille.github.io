@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Tangerine:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  background-image: url(./images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Tangerine", cursive;
+  margin: 2rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 1rem;
+}
+
+h3 {
+  margin: 1rem;
+}
+
+/* animations */
+@keyframes gortSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes startLeft {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes startRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* General styles */
+
+.gort-circle-wrapper {
+  border: 1px solid black;
+  border-radius: 50%;
+  background-image: url(./images/gort-circle.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  aspect-ratio: 1;
+  width: 80%;
+  animation: gortSpin 2s linear infinite;
+}
+
+.hasbulla-1 {
+  margin: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.capy-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  animation: startLeft 3s linear infinite;
+}
+
+.right {
+  animation: startRight 3s linear infinite;
+}
+
+.fader {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-in;
+}
+
+.fader.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer {
+  color: white;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer p {
+  margin: 2rem;
+  padding: 0.5rem;
+  font-family: "Tangerine", cursive;
+  font-style: italic;
+  font-size: 4.5rem;
+
+  border: 2px solid white;
+}
+
+.quote {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 2s ease-in;
+}
+
+.quote.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote span {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  float: right;
+}
