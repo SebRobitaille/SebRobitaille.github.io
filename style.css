@@ -82,7 +82,7 @@ body {
 
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
-  background-image: url(./images/background.jpg);
+  background-image: url(./images/christmas-background-unsplash.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,5 +239,44 @@ h3 {
 }
 
 #song {
-  outline: none ;
+  outline: none;
+}
+
+/* christmas section */
+
+.christmas-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes snow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(500vh);
+  }
+}
+
+.snowfall-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: snow 20s linear infinite;
 }
