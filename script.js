@@ -3,6 +3,10 @@ function createSnowflake() {
   const snowflake = document.createElement("div")
   snowflake.classList.add("snowflake")
   snowflake.style.left = `${Math.random() * 100}vw`
+  snowflake.addEventListener("animationiteration", () => {
+    // remove the snowflake element from the DOM when the animation completes
+    snowflake.remove()
+  })
   return snowflake
 }
 
